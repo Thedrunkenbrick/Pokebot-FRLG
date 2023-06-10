@@ -1,0 +1,125 @@
+bot_mode: run/surf between coords
+run_surf:
+  coord1:
+    - 10
+    - 33
+  coord2:
+    - 4
+    - 33
+obstructed_dir:
+  - Left
+  - Right
+version: frlg #options are Emerald (em) or Fire red Leaf Grean (frlg)
+manual_catch: false
+catch:
+- shinies
+- spore
+- perfect_ivs
+battle: [wild_pokemon]
+pokeball_priority:
+- premier_ball
+- ultra_ball
+- great_ball
+- poke_ball
+pokeball_override: # Per-species exceptions to pokeball_priority. Falls back to pokeball_priority if it has no Pokeballs in the list
+  Abra: 
+  - ultra_ball
+  - great_ball
+language: en # Supported languages: English (en), Spanish (es). Must match your ROM language to function properly.
+starter_pokemon: Mudkip
+eco_mode: true
+game_save:
+- save_game_after_catch
+encounter_log_limit: 100
+log:
+- all_encounters
+- shiny_encounters
+control_map:
+  a: x
+  b: z
+  l: w
+  r: e
+  up: up
+  down: down
+  right: right
+  left: left
+  select: space
+  start: enter
+  emu_screenshot: f12
+  emu_reset_combo:
+  - ctrl
+  - r
+banned_moves:
+- None
+  # 2-turn
+- Bounce
+- Dig
+- Dive
+- Fly
+- Sky Attack
+- Razor Wind
+- Doom Desire
+- Solar Beam
+  # Inconsistent
+- Fake Out
+- False Swipe
+- Nature Power
+- Present
+- Destiny Bond
+- Wrap
+- Snore
+- Spit Up
+- Bide
+- Bind
+- Counter
+- Future Sight
+- Mirror Coat
+- Grudge
+- Snatch
+- Spite
+- Curse
+- Endeavor
+- Revenge
+- Assist
+- Focus Punch
+- Eruption
+- Flail
+  # Ends battle
+- Roar
+- Whirlwind
+- Selfdestruct
+- Perish Song
+- Explosion
+- Memento
+no_sleep_pokemon:
+  # Shed Skin
+- Metapod
+- Kakuna
+- Ekans
+- Arbok
+- Dratini
+- Dragonair
+- Pupitar
+- Silcoon
+- Cascoon
+- Seviper
+  # Vital Spirit
+- Mankey
+- Primeape
+- Electabuzz
+- Magmar
+- Tyrogue
+- Elekid
+- Magby
+- Vigoroth
+  # Insomnia
+- Drowzee
+- Hypno
+- Hoothoot
+- Noctowl
+- Spinarak
+- Ariados
+- Murkrow
+- Delibird
+- Shuppet
+- Banette
