@@ -1,4 +1,4 @@
-bot_mode: run/surf between coords
+bot_mode: starters
 run_surf:
   coord1:
     - 10
@@ -15,7 +15,7 @@ catch:
 - shinies
 - spore
 - perfect_ivs
-battle: [wild_pokemon]
+battle: []
 pokeball_priority:
 - premier_ball
 - ultra_ball

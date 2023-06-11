@@ -1092,16 +1092,16 @@ def mode_starters():
                 except: continue
 
     elif emu_info['detectedGame'] == "Pokemon FireRed (U)" or emu_info['detectedGame'] == "Pokemon LeafGreen (U)":
-        debug_log.info(f"Soft resetting starter pokemon...")
+        # debug_log.info(f"Soft resetting starter pokemon...")
         release_all_inputs()
         
-        while trainer_info["state"] != GameState.OVERWORLD and trainer_info["posY"] != 5: press_button("A") 
+        while trainer_info["state"] != GameState.OVERWORLD and trainer_info["mapBank"] == 0: 
+            press_button("A")
+            
         # debug_log.info(len(party_info))
         while trainer_info["posX"] == 10 and trainer_info["posY"] == 5 and len(party_info) == 0:
             
             press_button("A")
-        
-        
 
         while len(party_info) > 0:
             try:
