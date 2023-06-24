@@ -9,8 +9,8 @@
             "total_lowest_sv": 19241
         },
         "Charmander": {
-            "encounters": 304,
-            "phase_encounters": 304,
+            "encounters": 307,
+            "phase_encounters": 307,
             "phase_lowest_sv": 62,
             "shiny_average": "-",
             "shiny_encounters": 0,
@@ -146,9 +146,9 @@
         }
     },
     "totals": {
-        "encounters": 439,
-        "longest_phase_encounters": 439,
-        "phase_encounters": 439,
+        "encounters": 442,
+        "longest_phase_encounters": 442,
+        "phase_encounters": 442,
         "phase_lowest_sv": 62,
         "phase_lowest_sv_pokemon": "Charmander",
         "shiny_average": "-",

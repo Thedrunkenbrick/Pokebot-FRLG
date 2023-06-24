@@ -1099,7 +1099,7 @@ def mode_starters():
             press_button("A")
             
         # debug_log.info(len(party_info))
-        while trainer_info["posX"] == 10 and trainer_info["posY"] == 5 and len(party_info) == 0:
+        while trainer_info["posY"] == 5 and len(party_info) == 0:
             
             press_button("A")
 
