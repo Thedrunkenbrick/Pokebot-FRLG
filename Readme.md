@@ -7,7 +7,7 @@ These scripts are currently being used to complete and stream a Prof. Oak living
 ## Supported games
 |  | Ruby | Sapphire | Emerald | FireRed | LeafGreen | 
 |--| :--: | :--: | :--: | :--: | :--: |
-| English | ❌ | ❌ | ✅ | ❌ | ❌ |
+| English | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Spanish | ❌ | ❌ | ✅ | ❌ | ❌ |
 | German  | ❌ | ❌ | ✅ | ❌ | ❌ |
 | French  | ❌ | ❌ | ❌ | ❌ | ❌ |
