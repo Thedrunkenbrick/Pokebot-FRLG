@@ -1,20 +1,34 @@
-dofile ("data\\lua\\Memory.lua")
-dofile ("data\\lua\\GameSettings.lua")
+local utils = {}
 
+function utils.translatePath(path)
+	local separator = package.config:sub(1, 1)
+	local pathTranslated = string.gsub(path, "\\", separator)
+	return pathTranslated == nil and path or pathTranslated
+end
 
-
+dofile (utils.translatePath("lua\\Memory.lua"))
+dofile (utils.translatePath("lua\\GameSettings.lua"))
 
 GameSettings.initialize()
 
 console.log("Lua Version: ".._VERSION)
-package.path = ";.\\data\\lua\\?.lua;"
+package.path = ";.\\lua\\?.lua;"
 
 function getTrainer()
 	local trainer = Memory.readdword(GameSettings.trainerpointer)
+	
+	if (GameSettings.version == 2) then
+		stateOffSet = 199
+	end
+
+	if (GameSettings.version == 3) then
+		stateOffSet = 139
+	end
+
 
 	trainer = {
-		state = Memory.readbyte(GameSettings.trainerpointer + 139),
-		mapId = Memory.readbyte(GameSettings.trainerpointer + 2),
+		state = Memory.readbyte(GameSettings.trainerpointer + stateOffSet),
+		mapId = Memory.readbyte(GameSettings.mapid),
 		mapBank = Memory.readbyte(GameSettings.mapbank),
 		posX = Memory.readbyte(GameSettings.coords + 0) - 7,
 		posY = Memory.readbyte(GameSettings.coords + 2) - 7
@@ -28,33 +42,9 @@ last_posX = 0
 last_state = 0
 last_mapBank = 0
 last_mapId = 0
-last_PID = 0
-last_LVL = 0 
-
-OffSet = 0
-
-mapId = Memory.readbyte(GameSettings.trainerpointer + OffSet)
-
--- while mapId ~= 2 do
--- 	OffSet = OffSet + 1
--- 	mapId = Memory.readbyte(GameSettings.trainerpointer + OffSet)
-	
--- 	if mapId == 2 then
--- 		local f = assert(io.open("quicksave.txt", "w"))
--- 		f:write(OffSet, "\n")
--- 		f:close()
--- 		gui.addmessage("DONE")
--- 	end
--- end
-
-
 
 while true do
 	trainer = getTrainer()
-
-	opponent = readMonData(GameSettings.estats)
-
-
 
 	if (last_state ~= trainer.state) then
 		last_state = trainer.state
@@ -71,16 +61,6 @@ while true do
 		last_mapBank = trainer.mapBank
 		last_mapId = trainer.mapId
 		gui.addmessage("Map: " .. trainer.mapBank .. ":" .. trainer.mapId)
-	end
-
-	if (last_PID ~= opponent.personality) then
-		last_PID = opponent.personality
-		gui.addmessage("PID: " .. opponent.personality)
-	end
-
-	if (last_LVL ~= opponent.level) then
-		last_LVL = opponent.level
-		gui.addmessage("LVL: " .. opponent.level)
 	end
 
 	emu.frameadvance()
