@@ -104,7 +104,7 @@ last_opponent_personality = None
 
 
 def OpponentChanged():
-    log.info("Opponent Changed Called!")
+    
     """
     This function checks if there is a different opponent since last check, indicating the game state is probably
     now in a battle
@@ -444,6 +444,7 @@ def EncounterPokemon(starter: bool = False, softReset: bool = False):
         elif starter:
             return False
         elif softReset:
+            
             while not DetectTemplate("battle/fight.png"):
                 PressButton("A")
             ResetGame()
