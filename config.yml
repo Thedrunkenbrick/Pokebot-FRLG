@@ -59,7 +59,7 @@ bot_instance_id: pokebot_1
 # Autosaves
 # Auto save every n encounters
 # Set to 0 to disable
-autosave_encounters: 1000
+autosave_encounters: 0
 
 # Backups
 # Backup pokebot stats/ folder every n encounters

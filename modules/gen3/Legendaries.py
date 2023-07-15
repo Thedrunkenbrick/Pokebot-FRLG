@@ -30,14 +30,13 @@ def ModeLegendary():
     
     while GetTrainer()["state"] != GameState.MISC_MENU and GetTrainer()["mapBank"] != 0:
         try: 
-            PressButton("A")
+            
             if OpponentChanged():
-                log.info("Opponent Changed!!")
-                EncounterPokemon()
-                ResetGame()
+                EncounterPokemon(softReset=True)
+                #ResetGame()
                 
             else:
-                log.info("Opponent NOT Changed!!")
+                PressButton("A")
                 WaitFrames(50)
         except:
             continue
